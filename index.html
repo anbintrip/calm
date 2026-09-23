@@ -1371,7 +1371,6 @@ register({
   layers: [
     { type: 'mist',   n: 5, area: [.42, .30, 1, .62], c: '206,222,236', o: .10, speed: .8 },
     { type: 'mist',   n: 3, area: [.55, .42, 1, .55], c: '226,236,246', o: .08, speed: 1.4 },
-    { type: 'water',  area: [.16, .70, .84, .99], amp: .0035, speed: 1.0, bands: 30, freq: 6 },
     { type: 'ripple', area: [.22, .74, .78, .98], rate: 7, size: 30, flat: .26, o: .20, dur: 1.5 },
     { type: 'rain',   n: 260, area: [-.05, -.05, 1.05, 1.05], wind: .16, speed: 1, o: .30, c: '224,238,252' },
     { type: 'rain',   n: 90,  area: [-.05, -.05, 1.05, 1.05], wind: .22, speed: 1.5, o: .18, c: '235,245,255' },
@@ -1380,8 +1379,8 @@ register({
   grade: { tint: '70,110,150', tintA: .10, vignette: [.40, '10,18,30'], grain: .038 },
 
   audio(A, bus) {
-    A.bed(bus, { type: 'highpass', freq: 760, gain: .20, lfo: .07, lfoAmt: .06 });
-    A.bed(bus, { freq: 240, gain: .17 });
+    A.bed(bus, { type: 'highpass', freq: 760, gain: .12, lfo: .07, lfoAmt: .06 });
+    A.bed(bus, { freq: 240, gain: .10 });
     A.pad(bus, [98, 146.8, 220], .016, 'triangle');
     const drip = () => {
       A.ping(bus, { freq: rand(1400, 520), gain: rand(.05, .015), dur: .2, slideTo: rand(700, 260), attack: .004 });
@@ -1421,7 +1420,6 @@ register({
   layers: [
     { type: 'sparkle', n: 90, area: [0, 0, 1, .40], c: '235,244,255', o: .40, cross: true },
     { type: 'meteor',  area: [0, 0, 1, .42], rate: .55, o: .95 },
-    { type: 'water',   area: [.33, .52, 1, .74], amp: .0032, speed: .9, bands: 26, freq: 5 },
     { type: 'glint',   n: 12, area: [.36, .54, 1, .74], c: '200,220,255', o: .045, speed: .7 },
     { type: 'ember',   n: 30, area: [.385, .70, .490, .78], c: '255,178,84', o: .8, speed: 1 },
     { type: 'mist',    n: 3, area: [.35, .48, 1, .60], c: '200,214,238', o: .07, speed: .6 }
@@ -1526,7 +1524,6 @@ register({
     { u: .84, v: .05, a: 1.22, w: .08, len: .9,  o: .040, c: '210,250,255' }
   ],
   layers: [
-    { type: 'water',  area: [.035, .045, .965, .90], amp: .0022, speed: 1.25, bands: 30, freq: 8 },
     { type: 'glint',  n: 12, area: [0, .015, 1, .12], c: '255,255,255', o: .085, speed: 1.4 },
     { type: 'bubble', n: 34, area: [.70, .06, .775, .52], o: .70, speed: 1.6 },
     { type: 'bubble', n: 22, area: [.04, .05, .96, .90], o: .40, speed: .8 },
